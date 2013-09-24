@@ -1,3 +1,8 @@
+{{servlet-context}}					
+{% block content %}
+
+{% endblock %}
+
 <!DOCTYPE html>
 <html>
 	<head>
