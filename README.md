@@ -1,19 +1,6 @@
-# mikegeorge-org
+# mikegeorge.org
 
-FIXME
-
-## Prerequisites
-
-You will need [Leiningen][1] 2.0 or above installed.
-
-[1]: https://github.com/technomancy/leiningen
-
-## Running
-
-To start a web server for the application, run:
-
-    lein ring server
-
+This is the beta version of mikegeorge.org currently being developed with Clojure and Luminus.
 ## License
 
-Copyright © 2013 FIXME
+Copyright © 2013 Mike George
