@@ -1,10 +1,8 @@
-(ns mikegeorge-org.handler  
-  (:require [compojure.core :refer [defroutes]]            
-            [mikegeorge-org.routes.home :refer [home-routes]]
-            [noir.util.middleware :as middleware]
+(ns mikegeorge-org.handler
+  (:require [compojure.core :refer [defroutes routes]]
             [compojure.route :as route]
-            [taoensso.timbre :as timbre]
-            [com.postspectacular.rotor :as rotor]))
+            [compojure.handler :refer [site]]
+            [mikegeorge-org.routes.home :refer [home-routes]]))
 
 (defroutes app-routes
   (route/resources "/")
@@ -16,36 +14,14 @@
    an app server such as Tomcat
    put any initialization code here"
   []
-  (timbre/set-config!
-    [:appenders :rotor]
-    {:min-level :info
-     :enabled? true
-     :async? false ; should be always false for rotor
-     :max-message-per-msecs nil
-     :fn rotor/append})
-  
-  (timbre/set-config!
-    [:shared-appender-config :rotor]
-    {:path "mikegeorge_org.log" :max-size (* 512 1024) :backlog 10})
-  
-  (timbre/info "mikegeorge-org started successfully"))
+  (println "mikegeorge.org is starting"))
 
 (defn destroy
   "destroy will be called when your application
    shuts down, put any clean up code here"
   []
-  (timbre/info "mikegeorge-org is shutting down..."))
+  (println "mikegeorge.org is shutting down"))
 
-(def app (middleware/app-handler
-           ;; add your application routes here
-           [home-routes app-routes]
-           ;; add custom middleware here
-           :middleware []
-           ;; add access rules here
-           :access-rules []
-           ;; serialize/deserialize the following data formats
-           ;; available formats:
-           ;; :json :json-kw :yaml :yaml-kw :edn :yaml-in-html
-           :formats [:json-kw :edn]))
-
-(def war-handler (middleware/war-handler app))
+(def app
+  (-> (routes home-routes app-routes)
+      (site)))
