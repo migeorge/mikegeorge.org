@@ -1,0 +1,25 @@
+<template name="job">
+	<!-- Start: Job -->
+	<div class="row job">
+		<div class="col-full">
+			<h3>{{position}}</h3>
+			<div class="job-attributions">{{skills}}</div>
+		</div>
+
+		<div class="col-full text-center">{{description}}</div>
+
+		<div class="row">
+			<div class="col-2-3 col-wrap centered">
+				<div class="col-1-2 job-company"><strong>Company:</strong> <a href="{{company_link}}">{{company}}</a></div>
+				<div class="col-1-2 job-period"><strong>Period:</strong> {{start}} - {{end}}</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-2-3 col-wrap centered gallery">
+			<!--	<div class="col-1-4 job-project"><a href="static/img/big-4.jpg" title="Project 1"><img src="static/img/thumb-4.png" alt=""></a></div> -->
+			</div>
+		</div>
+	</div>
+	<!-- End: Job -->
+</template>

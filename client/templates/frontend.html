@@ -1,0 +1,164 @@
+<template name="frontend">
+	<div class="top-decorations"></div>
+
+	<!-- Start: Intro -->
+	<section id="intro" class="fx-backstretch">
+		<div class="info">
+			<div class="container">
+				<div class="row">
+					<div class="col-full"><h1>Mike George</h1></div>
+				</div>
+				<div class="row"><div class="col-1-4 centered line"></div></div>
+				<div class="row">
+					<div class="col-full"><h4>Programmer / IT Professional</h4></div>
+				</div>
+			</div>
+		</div>
+
+		<nav id="nav">
+			<!-- The content between <span> </span> tags will be hidden on mobile version -->
+			<ul class="clearfix">
+				<li><a href="#profile">Pro<span>file</span></a></li>
+				<li><a href="#skills">Ski<span>lls</span></a></li>
+				<li><a href="#experience">Exp<span>erience</span></a></li>
+				<li><a href="#education">Edu<span>cation</span></a></li>
+				<!--<li><a href="#portfolio">Por<span>tfolio</span></a></li> -->
+				<li><a href="#contact">Con<span>tact</span></a></li>
+			</ul>
+		</nav>
+	</section>
+	<!-- End: Intro -->
+
+	<!-- Start: Personal profile -->
+	<section id="profile" class="section">
+		<div class="container">
+			<div class="row">
+				<div class="col-full">
+					<h2 class="section-title">Personal Profile</h2>
+					<div class="centered line"></div>
+				</div>
+			</div>
+
+			<div class="row section-content">
+				<div class="col-1-3">
+					<h4>Why?</h4>
+					<p>I've always enjoyed working with computers. Early on in High School
+						I started repairing electronic equipment including Laptops, Desktops, and
+						iPods. Soon after, I found a field that I enjoyed even more than computer
+						repair, Application Development. I genuinely enjoy being able to create
+						custom applications from scratch and improving other businesses simultaneously.</p>
+					</div>
+					<div class="col-1-3">
+						<h4>Web Consulting</h4>
+
+						<p>In my free time I am a web consultant under the name Tall Duck, LLC:</p>
+						<p>I prefer the following languages and platforms:</p>
+						<ul>
+							<li>Clojure / ClojureScript</li>
+							<li>Javascript / AngularJS</li>
+							<li>Ruby</li>
+							<li>Python</li>
+							<li>HTML / CSS / JavaScript</li>
+							<li>ASP.NET</li>
+							<li>PHP / Wordpress</li>
+						</ul>
+					</div>
+					<div class="col-1-3">
+						<h4>Social Media</h4>
+
+						<p>I am available on a few social media sites, for professional connections I prefer LinkedIn.</p>
+
+						<ul class="social-links clearfix">
+							<li><a href="http://facebook.com/mikeyg6754" title="Facebook"><i class="icon-facebook-sign"></i></a></li>
+							<li><a href="https://plus.google.com/107630430141142782908" title="Google Plus"><i class="icon-google-plus-sign"></i></a></li>
+							<li><a href="http://linkedin.com/in/migeorge" title="LinkedIn"><i class="icon-linkedin-sign"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End: Personal profile -->
+
+		<!-- Start: Technical Skills -->
+		<section id="skills" class="section-alt">
+			<div class="container">
+				<div class="row">
+					<div class="col-full">
+						<h2 class="section-title">Technical Skills</h2>
+						<div class="centered line"></div>
+					</div>
+				</div>
+
+				<div class="row section-content">
+					{{#each skills}}
+					{{> skill}}
+					{{/each}}
+				</div>
+			</div>
+		</section>
+		<!-- End: Technical Skills -->
+
+		<!-- Start: Work Experience -->
+		<section id="experience" class="section">
+			<div class="container">
+				<div class="row">
+					<div class="col-full">
+						<h2 class="section-title">Work Experience</h2>
+						<div class="centered line"></div>
+					</div>
+				</div>
+
+				<div class="row section-content">
+					{{#each jobs}}
+					{{> job}}
+					<div class="separator"></div>
+					{{/each}}
+				</div>
+			</div>
+		</section>
+		<!-- End: Work Experience -->
+
+		<!-- Start: Education -->
+		<section id="education" class="section-alt">
+			<div class="container">
+				<div class="row">
+					<div class="col-full">
+						<h2 class="section-title">Education</h2>
+						<div class="centered line"></div>
+					</div>
+				</div>
+
+				<div class="row section-content">
+					{{#each schools}}
+					{{> school}}
+					<div class="separator"></div>
+					{{/each}}
+				</div>
+			</div>
+		</section>
+		<!-- End: Education -->
+
+<!-- Start: Contact -->
+<section id="contact" class="section">
+	<div class="container">
+		<div class="row">
+			<div class="col-full">
+				<h2 class="section-title">Let's get in touch</h2>
+				<div class="centered line"></div>
+			</div>
+		</div>
+
+		<div class="row section-content">
+			<div class="col-1-3 col-wrap centered text-center">
+				<h2>Send me an Email: mike@mikegeorge.org</h2>
+			</div>
+
+			<div class="separator"></div>
+
+			<div class="col-1-3 centered text-center">
+				<a href="/doc/MGeorge-Resume-2014.pdf">Click here for my printable resume</a>
+			</div>
+		</div>
+	</div>
+</section>
+</template>
