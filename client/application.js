@@ -15,11 +15,29 @@ Template.frontend.schools = function () {
 };
 
 Template.skill.rendered = function () {
-	$( '.skill-pie' ).easyPieChart( {
-			barColor: '#f08b65',
-			trackColor: '#cccccc',
-			scaleColor: false,
-			lineWidth: 5,
-			size: 120
-		} );
+	$('.skill-pie').easyPieChart( {
+		barColor: '#f08b65',
+		trackColor: '#cccccc',
+		scaleColor: false,
+		lineWidth: 5,
+		size: 120
+	});
 };
+
+Template.skill.events({
+	'dblclick .editable':function(e, tmpl){
+		alert(tmpl.data._id);
+	}
+});
+
+Template.job.events({
+	'dblclick .editable':function(e, tmpl){
+		alert(tmpl.data._id);
+	}
+});
+
+Template.school.events({
+	'dblclick .editable':function(e, tmpl){
+		alert(tmpl.data._id);
+	}
+});
