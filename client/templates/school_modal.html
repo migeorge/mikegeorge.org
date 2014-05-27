@@ -1,14 +1,36 @@
 <template name="school_modal">
 	<div id="school_modal" class="modal">
 	  <div class="modal-header">
-	    <h3>Edit School</h3>
+	    <h3>{{#if school}}Edit{{else}}Add{{/if}} School</h3>
 	  </div>
 	  <div class="modal-body">
-	    <p>One fine body…</p>
+	    <form role="form">
+		  <div class="form-group">
+		    <label for="school">School</label>
+		    <input type="text" class="form-control" id="school" value="{{school.school}}" />
+		  </div>
+		  <div class="form-group">
+		    <label for="meta">Meta</label>
+		    <input type="text" class="form-control" id="meta" value="{{school.meta}}" />
+		  </div>
+		  <div class="form-group">
+		    <label for="description">Description</label>
+		    <input type="text" class="form-control" id="description" value="{{school.description}}" />
+		  </div>
+		  <div class="form-group">
+		    <label for="completion">Completion</label>
+		    <input type="text" class="form-control" id="completion" value="{{school.completion}}" />
+		  </div>
+		</form>
 	  </div>
 	  <div class="modal-footer">
+	  	{{#if school}}<button type="button" class="btn btn-danger pull-left remove">Remove School</button>{{/if}}
 	    <button type="button" class="btn cancel">Close</button>
+	    {{#if school}}
 	    <button type="button" class="btn btn-primary save">Save Changes</button>
+	    {{else}}
+	    <button type="button" class="btn btn-primary add">Add School</button>
+	    {{/if}}
 	  </div>
 	</div>
 </template>

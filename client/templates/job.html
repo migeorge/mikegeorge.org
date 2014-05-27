@@ -1,6 +1,6 @@
 <template name="job">
 	<!-- Start: Job -->
-	<div class="row job editable">
+	<div class="row job{{#if currentUser}} editable{{/if}}">
 		<div class="col-full">
 			<h3>{{position}}</h3>
 			<div class="job-attributions">{{skills}}</div>

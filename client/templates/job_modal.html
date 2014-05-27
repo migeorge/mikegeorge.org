@@ -1,14 +1,48 @@
 <template name="job_modal">
 	<div id="job_modal" class="modal">
 	  <div class="modal-header">
-	    <h3>Edit Job</h3>
+	    <h3>{{#if job}}Edit{{else}}Add{{/if}} Job</h3>
 	  </div>
 	  <div class="modal-body">
-	    <p>One fine body…</p>
+	    <form role="form">
+		  <div class="form-group">
+		    <label for="position">Position</label>
+		    <input type="text" class="form-control" id="position" value="{{job.position}}" />
+		  </div>
+		  <div class="form-group">
+		    <label for="skills">Skills</label>
+		    <input type="text" class="form-control" id="skills" value="{{job.skills}}" />
+		  </div>
+		  <div class="form-group">
+		    <label for="description">Description</label>
+		    <textarea id="description">{{job.description}}</textarea>
+		  </div>
+		  <div class="form-group">
+		    <label for="company">Company</label>
+		    <input type="text" class="form-control" id="company" value="{{job.company}}" />
+		  </div>
+		  <div class="form-group">
+		    <label for="company_link">Company Link</label>
+		    <input type="text" class="form-control" id="company_link" value="{{job.company_link}}" />
+		  </div>
+		  <div class="form-group">
+		    <label for="start">Start</label>
+		    <input type="text" class="form-control" id="start" value="{{job.start}}" />
+		  </div>
+		  <div class="form-group">
+		    <label for="end">End</label>
+		    <input type="text" class="form-control" id="end" value="{{job.end}}" />
+		  </div>
+		</form>
 	  </div>
 	  <div class="modal-footer">
+	  	{{#if job}}<button type="button" class="btn btn-danger pull-left remove">Remove Job</button>{{/if}}
 	    <button type="button" class="btn cancel">Close</button>
+	    {{#if job}}
 	    <button type="button" class="btn btn-primary save">Save Changes</button>
+	    {{else}}
+	    <button type="button" class="btn btn-primary add">Add Job</button>
+	    {{/if}}
 	  </div>
 	</div>
 </template>

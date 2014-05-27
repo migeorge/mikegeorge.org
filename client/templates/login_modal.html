@@ -4,7 +4,17 @@
 	    <h3>Login</h3>
 	  </div>
 	  <div class="modal-body">
-	    <p>One fine body…</p>
+	    <form role="form">
+		  <div class="form-group">
+		    <label for="username">Username</label>
+		    <input type="text" class="form-control" id="username" />
+		  </div>
+		  <div class="form-group">
+		    <label for="password">Password</label>
+		    <input type="password" class="form-control" id="password" />
+		  </div>
+		</form>
+		{{#if loginError}}<div style="color:red;">Username or Password is incorrect!</div>{{/if}}
 	  </div>
 	  <div class="modal-footer">
 	    <button href="#" class="btn cancel">Close</button>

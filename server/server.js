@@ -8,4 +8,4 @@ Meteor.publish("skills", function () {
 
 Meteor.publish("schools", function () {
 	return Schools.find();
-})
+});

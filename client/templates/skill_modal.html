@@ -1,14 +1,28 @@
 <template name="skill_modal">
 	<div id="skill_modal" class="modal">
 	  <div class="modal-header">
-	    <h3>Edit Skill</h3>
+	    <h3>{{#if skill}}Edit{{else}}Add{{/if}} Skill</h3>
 	  </div>
 	  <div class="modal-body">
-	    <p>ID: {{id}}</p>
+	    <form role="form">
+		  <div class="form-group">
+		    <label for="skill">Skill</label>
+		    <input type="text" class="form-control" id="skill" value="{{skill.skill}}" />
+		  </div>
+		  <div class="form-group">
+		    <label for="confidence">Confidence %</label>
+		    <input type="text" class="form-control" id="confidence" value="{{skill.confidence}}" />
+		  </div>
+		</form>
 	  </div>
 	  <div class="modal-footer">
+	  	{{#if skill}}<button type="button" class="btn btn-danger pull-left remove">Remove Skill</button>{{/if}}
 	    <button type="button" class="btn cancel">Close</button>
+	    {{#if skill}}
 	    <button type="button" class="btn btn-primary save">Save Changes</button>
+	    {{else}}
+	    <button type="button" class="btn btn-primary add">Add Skill</button>
+	    {{/if}}
 	  </div>
 	</div>
 </template>

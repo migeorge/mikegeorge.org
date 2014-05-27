@@ -1,11 +1,10 @@
 <template name="school">
 	<!-- Start: School -->
-	<div class="row school editable">
+	<div class="row school{{#if currentUser}} editable{{/if}}">
 		<div class="col-full">
 			<h3>{{school}}</h3>
 			<div class="school-meta">{{meta}}</div>
 		</div>
-
 		<div class="col-full text-center">
 			{{description}}
 
