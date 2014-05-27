@@ -23,21 +23,3 @@ Template.skill.rendered = function () {
 		size: 120
 	});
 };
-
-Template.skill.events({
-	'dblclick .editable':function(e, tmpl){
-		alert(tmpl.data._id);
-	}
-});
-
-Template.job.events({
-	'dblclick .editable':function(e, tmpl){
-		alert(tmpl.data._id);
-	}
-});
-
-Template.school.events({
-	'dblclick .editable':function(e, tmpl){
-		alert(tmpl.data._id);
-	}
-});
