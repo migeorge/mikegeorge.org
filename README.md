@@ -1,5 +1,4 @@
-#mikegeorge.org
-==============
+# mikegeorge.org
 
 This is a new version of mikegeorge.org written with Meteor.
 
